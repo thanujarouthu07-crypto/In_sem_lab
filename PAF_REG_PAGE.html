@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>Register</title>
+
+<style>
+body {
+font-family: Arial;
+background-color:lightcyan;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.register {
+background-color: white;
+width: 350px;
+padding: 25px;
+border-radius: 10px;
+box-shadow: 0 0 10px gray;
+}
+ h2 {
+ text-align: center;
+ color: black;
+}
+input, select {
+ width: 100%;
+ padding: 10px;
+ margin: 7px 0;
+ box-sizing: border-box;
+ border: 1px solid gray;
+border-radius: 5px;
+}
+ button {
+width: 100%;
+padding: 10px;
+margin-top: 10px;
+background-color: cyan;
+color: black;
+border: none;
+border-radius: 5px;
+}
+#message {
+text-align: center;
+color: red;
+}
+</style>
+</head>
+
+<body>
+<div class="register">
+<h2>Register</h2>
+<input type="text" id="fname" placeholder="First Name">
+<input type="text" id="lname" placeholder="Last Name">
+<input type="tel" id="phone" placeholder="Phone Number">
+<input type="number" id="age" placeholder="Age">
+<select id="gender">
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+<input type="text" id="email" placeholder="Email">
+<input type="password" id="password" placeholder="Password">
+<input type="password" id="confirmPassword" placeholder="Confirm Password">
+<p id="message"></p>
+<button onclick="register()">Register</button></div>
+<script>
+function register() {
+var fname = document.getElementById("fname").value;
+var lname = document.getElementById("lname").value;
+var phone = document.getElementById("phone").value;
+var age = document.getElementById("age").value;
+var gender = document.getElementById("gender").value;
+var email = document.getElementById("email").value;
+var password = document.getElementById("password").value;
+var confirmPassword = document.getElementById("confirmPassword").value;
+var message = document.getElementById("message");
+if (fname == "" || lname == "" || phone == "" ||
+age == "" || gender == "" || email == "" ||
+password == "" || confirmPassword == "") {message.innerHTML = "Please fill all the details";
+ }
+else if (password != confirmPassword) {
+    message.innerHTML = "Passwords do not match";
+}
+ else {
+localStorage.setItem("fname", fname);
+localStorage.setItem("lname", lname);
+localStorage.setItem("phone", phone);
+localStorage.setItem("age", age);
+localStorage.setItem("gender", gender);
+localStorage.setItem("email", email);
+localStorage.setItem("password", password);
+message.style.color = "green";
+message.innerHTML = "Registration successful!";
+window.location.href = "PAF_LOG_PAGE.html";
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<html>
+<head>
+    <title>Login Page</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color:lightcyan;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login {
+            background-color: white;
+            width: 300px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+            color: black;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: cyan;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: lightcyan;
+        }
+
+        #msg {
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login">
+        <h2>Login</h2>
+
+        <input type="email" id="email" placeholder="Enter Email">
+
+        <input type="password" id="password" placeholder="Enter Password">
+
+        <p id="msg"></p>
+
+        <button onclick="login()">Login</button>
+    </div>
+
+    <script>
+        function login() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var msg = document.getElementById("msg");
+
+            if (email == "" || password == "") {
+                msg.innerHTML = "Please enter email and password";
+            }
+            else if (password.length < 6) {
+                msg.innerHTML = "Password must contain 6 characters";
+            }
+            else {
+                msg.style.color = "green";
+                msg.innerHTML = "Login successful";
+            }
+        }
+    </script>
+
+</body>
+</html>

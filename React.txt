@@ -1,0 +1,82 @@
+React :
+Predefined and develop the front end part using java script
+Node.js and vs code are required
+Node.js will support the react by installing the required libraries
+steps:
+> check if the Node.js is installed or not (npm -v)
+> npm create vite@latest project_name
+> npx
+> create-vite Myjsproject
+> Package Name - Enter
+> Select a frame work - React
+> Select a variant - JavaScript + React compiler
+> Which linter to use?
+│  Oxlint
+Install with npm and start now?
+│  Yes
+│
+◇  Scaffolding project in C:\Users\B.THARISHMA\Desktop\Thanuja\Myjsproject...
+│
+◇  Installing dependencies with npm...
+
+added 64 packages, and audited 65 packages in 1m
+
+13 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+│
+◇  Starting dev server...
+
+> myjsproject@0.0.0 dev
+> vite
+
+
+  VITE v8.3.2  ready in 851 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+
+
+>>> To open the local link we should 
+>  ctrl + shift + p
+>  type simple browser in search bar
+Then it shows Browser: open Integrated browser
+
+thennnnnn>>>>>>>
+
+open App.jsx
+> delete the code in the return part
+return(-----------------);
+>and add
+
+return(
+<h1> This is my project <h1>
+);
+
+create a new file in src with name Sample.jsx
+>code: 
+  
+function Sample(){
+return(
+<h1> Hii !!!!! <h1>
+);
+export default Sample
+
+open main.jsx
+>default code:
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+>>>>> replace <App /> with <Sample />
+in some system if we make this change by default the statement :
+import Sample from './Sample.jsx'
+>or else add the above statement.
